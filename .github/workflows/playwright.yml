@@ -21,7 +21,8 @@ jobs:
 
       - name: Checkout main application repo
         run: |
-          git clone --depth 1 --branch ${{ github.event.inputs.branch }} https://github.com/${{ github.event.inputs.repo }} app
+          git clone --depth 1 --branch test https://x-access-token:${{ secrets.PLAYWRIGHT_TEST_REPO_TOKEN }}@github.com/dtoth-mono/main-app.git app
+
           cd app
           npm install
           npm start & 
